@@ -1,3 +1,4 @@
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -37,12 +38,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 image: AssetImage('images/background_image.jpg'),
                 fit: BoxFit.cover)),
         child: Container(
-          padding: EdgeInsets.only(top: 250),
+          padding: EdgeInsets.only(top: 350),
           child: Column(
             children: <Widget>[
               TextFormField(
                 decoration: InputDecoration(
                   labelText: 'Enter your username',
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
                   icon: Icon(Icons.person),
                 ),
               ),
@@ -51,8 +55,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: InputDecoration(
                   labelText: 'Enter your password',
                   icon: Icon(Icons.lock),
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              FlatButton(
+//                textColor: Colors.greenAccent,
+                onPressed: () {
+                  print("You have submitted the data");
+              }, child: Text(
+                "Submit",
+                style: TextStyle(
+                  color: Colors.greenAccent,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              ),
             ],
           ),
         ),
